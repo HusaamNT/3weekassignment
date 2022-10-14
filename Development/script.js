@@ -15,11 +15,12 @@ function writePassword() {
     if (passwordLength < 8 || 128 < passwordLength){
       window.alert("That character length isn't allowed")
     }
-    
     for (let i = 0; i < passwordLength; i++) {
-      password += charsLowerCase(Math.floor(Math.random() * passwordLength));
+       let result = charsLowerCase.charAt(Math.floor(Math.random() * passwordLength));
+       
     }
-  }
+    return result
+  } 
   
 
   passwordText.value = password; 
