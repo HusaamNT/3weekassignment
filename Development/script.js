@@ -1,7 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
-const charsLowerCase = ["a", "b", "c", "d", "e", "f"]
+const charsLowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+const charsUpperCase = [""]
+const charsNumbers = [""]
+const charsSpecial = [""]
 
 function writePassword() {
   var password = generatePassword();
@@ -9,12 +12,12 @@ function writePassword() {
   
   function generatePassword(){
     let passwordLength = prompt("Enter the number of characters you would like your password to be:")
-    if (!passwordLength < 8 && 128 < !passwordLength){
+    if (passwordLength < 8 || 128 < passwordLength){
       window.alert("That character length isn't allowed")
     }
     
     for (let i = 0; i < passwordLength; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charsLowerCase.passwordLength));
+      password += charsLowerCase(Math.floor(Math.random() * passwordLength));
     }
   }
   
