@@ -16,17 +16,18 @@ function writePassword() {
       window.alert("That character length isn't allowed")
     }
     let upperCase = confirm("Would you like to include upper case letters in your password?") //gives a confirm box for the optional characters
+    /*
     if (upperCase === true){
-     // console.log("hello")    this confirms if that confirm window works
-    }
-    let numbers = confirm("Would you like to include numbers in your password?")
-    let special = confirm("Would you like to include special characters in your password?")
-
+         console.log("hello")    this confirms if that confirm window works
+    }*/
+      let numbers = confirm("Would you like to include numbers in your password?")
+      let special = confirm("Would you like to include special characters in your password?")
+    
     for (let i = 0; i < passwordLength; i++) {
-       let result = charsLowerCase.charAt(Math.floor(Math.random() * passwordLength)); //the random character generation for the lower case 
+       var configPassword = Math.floor(Math.random() * charsLowerCase.length); //the random character generation for the lower case 
        
     }
-    return result
+    console.log(configPassword)
   } 
   
 
