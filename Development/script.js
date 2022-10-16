@@ -59,20 +59,22 @@ const charsUpperCase = [
 ];
 const charsNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const charsSpecial = ["!", ".", "?", ",", " ", "&", "*", "£", "$"];
-
+let charConfig = [];
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   function generatePassword() {
+    
     let password = "";
     let passwordLength = prompt(
       "Enter the number of characters you would like your password to be:"
-    ); //gives the user a prompt window so they can choose a length for their password
+    ); //gives the user a prompt window so they can choose a length for thei password
     if (passwordLength < 8 || 128 < passwordLength) {
       //this makes the password between 8 and 128 characters long
       window.alert("That character length isn't allowed");
+      return
     }
+    charConfig = charConfig.concat(charsLowerCase)
     let upperCase = confirm(
       "Would you like to include upper case letters in your password?"
     ); //gives a confirm box for the optional characters
@@ -80,17 +82,26 @@ function writePassword() {
     if (upperCase === true){
          console.log("hello")    this confirms if that confirm window works
     }*/
+    if (upperCase === true)(
+      charConfig = charConfig.concat(charsUpperCase)
+    )
+
     let numbers = confirm(
       "Would you like to include numbers in your password?"
     );
+    if (upperCase === true)(
+      charConfig = charConfig.concat(charsNumbers)
+    )
     let special = confirm(
       "Would you like to include special characters in your password?"
     );
-
+    if (upperCase === true)(
+      charConfig = charConfig.concat(charsSpecial)
+    )
     for (let i = 0; i < passwordLength; i++) {
-      var lowerCasePassword = Math.floor(Math.random() * charsLowerCase.length); //the random character generation for the lower case
-      var configPassword = charsLowerCase[lowerCasePassword];
-      password = password + configPassword;``
+      var passwordConfig = Math.floor(Math.random() * charConfig.length); //the random character generation for the lower case
+      var randomPassword = charConfig[passwordConfig];
+      password = password + randomPassword;
     }
     return password;
     console.log(password);
