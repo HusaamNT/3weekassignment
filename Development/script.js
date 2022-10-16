@@ -59,12 +59,12 @@ const charsUpperCase = [
 ];
 const charsNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 const charsSpecial = ["!", ".", "?", ",", " ", "&", "*", "£", "$"];
-let charConfig = [];
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   function generatePassword() {
-    
+    let charConfig = [];
     let password = "";
     let passwordLength = prompt(
       "Enter the number of characters you would like your password to be:"
