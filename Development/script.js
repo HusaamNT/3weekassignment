@@ -65,11 +65,12 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   function generatePassword() {
+    let password = "";
     let passwordLength = prompt(
       "Enter the number of characters you would like your password to be:"
-    ); //gives the user a prompt window so they can choose a length for theie password
+    ); //gives the user a prompt window so they can choose a length for their password
     if (passwordLength < 8 || 128 < passwordLength) {
-      //this makes the password between 8and 128 characters long
+      //this makes the password between 8 and 128 characters long
       window.alert("That character length isn't allowed");
     }
     let upperCase = confirm(
@@ -87,10 +88,9 @@ function writePassword() {
     );
 
     for (let i = 0; i < passwordLength; i++) {
-      password += i + "";
       var lowerCasePassword = Math.floor(Math.random() * charsLowerCase.length); //the random character generation for the lower case
       var configPassword = charsLowerCase[lowerCasePassword];
-      password = password + configPassword;
+      password = password + configPassword;``
     }
     return password;
     console.log(password);
